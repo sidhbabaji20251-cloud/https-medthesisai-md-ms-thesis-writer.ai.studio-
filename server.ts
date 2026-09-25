@@ -28,8 +28,12 @@ app.use(express.json({ limit: '10mb' }));
 
 // Initial database setup for synchronization
 const DB_FILE = path.join(__dirname, 'projects_db.json');
-if (!fs.existsSync(DB_FILE)) {
-  fs.writeFileSync(DB_FILE, JSON.stringify({ projects: [] }, null, 2));
+try {
+  if (!fs.existsSync(DB_FILE)) {
+    fs.writeFileSync(DB_FILE, JSON.stringify({ projects: [] }, null, 2));
+  }
+} catch (e) {
+  console.warn('Read-only filesystem detected, falling back to default project state.');
 }
 
 // Read database helper
@@ -543,6 +547,7 @@ const PORT = process.env.PORT || 3000;
 
 async function startServer() {
   if (!isProd) {
+    console.log('Starting dynamic Vite development middleware compiler...');
     // Dynamically import Vite to create dev server
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
@@ -566,6 +571,7 @@ async function startServer() {
       }
     });
   } else {
+    console.log('Serving pre-compiled static production files from dist directory...');
     // Serve static files from compiled output in production
     app.use(express.static(path.resolve(__dirname, 'dist')));
     app.get('*', (req, res) => {
@@ -573,8 +579,8 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT} (${isProd ? 'Production' : 'Development'})`);
+  app.listen(Number(PORT), '0.0.0.0', () => {
+    console.log(`Server running on http://0.0.0.0:${PORT} (${isProd ? 'Production' : 'Development'})`);
   });
 }
 

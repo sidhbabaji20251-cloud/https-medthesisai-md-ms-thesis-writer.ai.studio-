@@ -34,7 +34,8 @@ import {
   Copy,
   FileCode,
   MessageSquare,
-  ClipboardCheck
+  ClipboardCheck,
+  Share2
 } from 'lucide-react';
 import {
   BarChart,
@@ -54,6 +55,9 @@ import {
 } from './components/DissertationPdfPreview';
 import { ThesisWriterCheckerSuite } from './components/ThesisWriterCheckerSuite';
 import { InstitutionalComplianceModal } from './components/InstitutionalComplianceModal';
+import { ProtocolBuilder } from './components/ProtocolBuilder';
+import { PublicationAI } from './components/PublicationAI';
+import { DefenseVivaPrep } from './components/DefenseVivaPrep';
 
 // Indian Medical Universities
 const INDIAN_UNIVERSITIES = [
@@ -354,9 +358,39 @@ const DEFAULT_PROJECTS: Project[] = [
 ];
 
 export default function App() {
+  const [customPublicUrl, setCustomPublicUrl] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('med_thesis_public_url') || '';
+    }
+    return '';
+  });
+  const [showShareMenu, setShowShareMenu] = useState<boolean>(false);
+
+  const isSandboxPreview = typeof window !== 'undefined' && (
+    window.location.hostname.startsWith('ais-dev-') ||
+    window.location.hostname.startsWith('ais-pre-')
+  );
+
+  const getCurrentAppUrl = () => {
+    if (customPublicUrl.trim()) {
+      return customPublicUrl.trim().replace(/\/+$/, '');
+    }
+    if (typeof window !== 'undefined') {
+      return window.location.origin;
+    }
+    return '';
+  };
+
+  const handleSavePublicUrl = (val: string) => {
+    setCustomPublicUrl(val);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('med_thesis_public_url', val);
+    }
+  };
+
   const [projects, setProjects] = useState<Project[]>(DEFAULT_PROJECTS);
   const [activeProjectId, setActiveProjectId] = useState<string>('p1');
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'chapters' | 'prompt_suite' | 'pubmed' | 'plagiarism' | 'frontmatter' | 'export'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'chapters' | 'protocol' | 'prompt_suite' | 'pubmed' | 'plagiarism' | 'frontmatter' | 'publication_ai' | 'viva_prep' | 'export'>('dashboard');
   const [activeChapterId, setActiveChapterId] = useState<string>('intro');
   
   // Custom forms
@@ -866,6 +900,140 @@ export default function App() {
         </div>
       </header>
 
+      {/* Indian Medical PG Welfare & Unified Freeware Sharing Banner */}
+      <div className="bg-emerald-50 border-b border-emerald-200 px-6 py-3 flex flex-col xl:flex-row xl:items-center justify-between text-xs text-emerald-800 gap-4">
+        <div className="flex flex-col md:flex-row md:items-start gap-3 flex-1">
+          <span className="bg-emerald-600 text-white font-bold px-2.5 py-1 rounded text-[10px] uppercase font-mono tracking-wide self-start shrink-0 mt-0.5">
+            100% Freeware • Built-In Server API
+          </span>
+          <div className="space-y-1.5 flex-1">
+            <p className="font-semibold text-emerald-950">
+              ⚡ <strong>Open-Access Student Welfare:</strong> MedThesisAI is free for all MD/MS students with the Gemini API key pre-integrated on the backend server.
+            </p>
+            {isSandboxPreview && !customPublicUrl.trim() ? (
+              <div className="bg-amber-50 border border-amber-300 text-amber-900 rounded-lg p-2.5 text-[11px] leading-relaxed">
+                <p className="font-bold text-amber-950">
+                  🚨 Why Mobile & Shared Links Show "404 Page Not Found" or "Security Cookie Blocked":
+                </p>
+                <ul className="list-disc list-inside mt-1 space-y-0.5 text-amber-900">
+                  <li>
+                    <strong>ais-pre-... (Shared Preview URL)</strong> returns <code className="bg-amber-100 px-1 rounded">404 Error: Page not found</code> until published in Google AI Studio.
+                  </li>
+                  <li>
+                    <strong>ais-dev-... (Editor Preview URL)</strong> is locked to your private editor session and blocks mobile phones & WhatsApp with <code className="bg-amber-100 px-1 rounded">Action required: blocking a required security cookie</code>.
+                  </li>
+                  <li>
+                    <strong>Permanent Fix (Takes 30 Seconds):</strong> Click the <strong>Deploy (Rocket Icon 🚀 "Deploy to Cloud Run")</strong> button in the <strong>top-right corner of the Google AI Studio window</strong> (outside this preview). That creates a permanent <strong>Public Freeware Cloud Run URL</strong> with zero login/cookie checks that opens directly inside WhatsApp on any mobile or desktop!
+                  </li>
+                </ul>
+              </div>
+            ) : null}
+            <div className="flex flex-wrap items-center gap-2 pt-0.5">
+              <span className="text-slate-600 font-semibold text-[11px]">Public Share URL:</span>
+              <input
+                type="text"
+                value={customPublicUrl}
+                onChange={(e) => handleSavePublicUrl(e.target.value)}
+                placeholder={getCurrentAppUrl() || 'Paste your deployed Cloud Run URL here (optional)...'}
+                className="bg-white border border-emerald-300 px-2.5 py-1 rounded text-[11px] font-mono text-emerald-900 w-full sm:w-[380px] focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              />
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(getCurrentAppUrl());
+                  showToast('✅ Direct App URL copied to clipboard!');
+                }}
+                className="bg-white hover:bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded border border-emerald-300 text-[11px] flex items-center space-x-1 cursor-pointer"
+              >
+                <Copy className="w-3 h-3" />
+                <span>Copy URL</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Single Unified Share Button with Multi-Channel Popover */}
+        <div className="relative shrink-0 self-start xl:self-center">
+          <button
+            onClick={async () => {
+              const shareUrl = getCurrentAppUrl();
+              const shareText = `Hey colleagues! Check out MedThesisAI — a 100% free AI dissertation & research protocol co-pilot designed for MD/MS students under NMC PG Board guidelines (API pre-integrated, no login required):\n\n${shareUrl}`;
+              if (typeof navigator !== 'undefined' && navigator.share && !isSandboxPreview) {
+                try {
+                  await navigator.share({
+                    title: 'MedThesisAI - Free MD/MS Dissertation Co-Pilot',
+                    text: shareText,
+                    url: shareUrl,
+                  });
+                  return;
+                } catch {
+                  // Fallback to menu
+                }
+              }
+              setShowShareMenu(!showShareMenu);
+            }}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors cursor-pointer text-xs shadow-sm"
+          >
+            <Share2 className="w-4 h-4" />
+            <span>Share Freeware App (WhatsApp / Email / Link)</span>
+          </button>
+
+          {showShareMenu && (
+            <div className="absolute right-0 mt-2 w-80 bg-white border border-slate-200 rounded-xl shadow-xl p-3 z-50 space-y-2 text-slate-800">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                <span className="font-bold text-xs text-slate-900">1-Click Freeware Share</span>
+                <button
+                  onClick={() => setShowShareMenu(false)}
+                  className="text-slate-400 hover:text-slate-600 text-xs font-bold px-1 cursor-pointer"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <button
+                onClick={() => {
+                  const shareUrl = getCurrentAppUrl();
+                  const preMessage = `Hey colleagues! Check out MedThesisAI — a 100% free AI dissertation & research protocol co-pilot designed for MD/MS students under NMC PG Board guidelines.\n\nDirect Link:\n${shareUrl}`;
+                  navigator.clipboard.writeText(preMessage);
+                  setShowShareMenu(false);
+                  showToast('✅ WhatsApp invite copied! Paste (Ctrl+V) in any WhatsApp chat or group.');
+                }}
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-3 rounded-lg flex items-center justify-between text-xs cursor-pointer transition-colors"
+              >
+                <span>1. Copy for WhatsApp</span>
+                <Copy className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                onClick={() => {
+                  const shareUrl = getCurrentAppUrl();
+                  const fullEmailText = `Subject: MedThesisAI - Free AI PG Medical Dissertation Co-Pilot\n\nHey colleagues!\n\nCheck out MedThesisAI — a 100% free AI dissertation & research protocol co-pilot designed for MD/MS students under NMC PG Board guidelines:\n\n${shareUrl}\n\nYou can open and write directly in Google Chrome or Safari on mobile or PC without any API key setup.`;
+                  navigator.clipboard.writeText(fullEmailText);
+                  setShowShareMenu(false);
+                  showToast('✅ Email invite copied! Paste (Ctrl+V) into your email client.');
+                }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg flex items-center justify-between text-xs cursor-pointer transition-colors"
+              >
+                <span>2. Copy for Email</span>
+                <FileText className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                onClick={() => {
+                  const shareUrl = getCurrentAppUrl();
+                  navigator.clipboard.writeText(shareUrl);
+                  setShowShareMenu(false);
+                  showToast('✅ Direct App Link copied to clipboard!');
+                }}
+                className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-2 px-3 rounded-lg flex items-center justify-between text-xs cursor-pointer transition-colors"
+              >
+                <span>3. Copy Direct URL Only</span>
+                <Copy className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Main Workspace Layout */}
       <div className="flex flex-1 overflow-hidden">
         
@@ -884,6 +1052,14 @@ export default function App() {
               >
                 <Layout className="w-4 h-4 text-emerald-400" />
                 <span>Dissertation Setup</span>
+              </button>
+
+              <button 
+                onClick={() => setActiveTab('protocol')} 
+                className={`w-full flex items-center space-x-2.5 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeTab === 'protocol' ? 'bg-slate-800 text-white font-semibold' : 'hover:bg-slate-800 hover:text-white'}`}
+              >
+                <ClipboardCheck className="w-4 h-4 text-teal-400" />
+                <span>NMC Protocol Builder</span>
               </button>
 
               <button 
@@ -924,6 +1100,22 @@ export default function App() {
               >
                 <Award className="w-4 h-4 text-emerald-400" />
                 <span>Front Matter & Certificates</span>
+              </button>
+
+              <button 
+                onClick={() => setActiveTab('publication_ai')} 
+                className={`w-full flex items-center space-x-2.5 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeTab === 'publication_ai' ? 'bg-slate-800 text-white font-semibold' : 'hover:bg-slate-800 hover:text-white'}`}
+              >
+                <FileCode className="w-4 h-4 text-blue-400" />
+                <span>Publication AI (IMRAD)</span>
+              </button>
+
+              <button 
+                onClick={() => setActiveTab('viva_prep')} 
+                className={`w-full flex items-center space-x-2.5 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeTab === 'viva_prep' ? 'bg-slate-800 text-white font-semibold' : 'hover:bg-slate-800 hover:text-white'}`}
+              >
+                <Award className="w-4 h-4 text-purple-400" />
+                <span>Viva Voce & Defense Slides</span>
               </button>
 
               <button 
@@ -1158,6 +1350,25 @@ export default function App() {
                 </div>
 
               </div>
+            )}
+
+            {/* TAB: NMC PROTOCOL BUILDER */}
+            {activeTab === 'protocol' && (
+              <ProtocolBuilder
+                activeProject={activeProject}
+                showToast={showToast}
+                onApplyToChapter={(chId, content, mode) => {
+                  if (mode === 'replace') {
+                    updateChapterContent(chId, content);
+                  } else {
+                    const existing = activeProject.chapters.find(c => c.id === chId)?.content || '';
+                    updateChapterContent(chId, existing + '\n\n' + content);
+                  }
+                  setActiveChapterId(chId);
+                  setActiveTab('chapters');
+                  showToast('Protocol applied as chapter basis!');
+                }}
+              />
             )}
 
             {/* TAB 2: ACTIVE CHAPTER EDITING & REFINEMENT AREA */}
@@ -2073,6 +2284,22 @@ export default function App() {
                 </div>
 
               </div>
+            )}
+
+            {/* TAB: PUBLICATION AI */}
+            {activeTab === 'publication_ai' && (
+              <PublicationAI
+                activeProject={activeProject}
+                showToast={showToast}
+              />
+            )}
+
+            {/* TAB: VIVA PREP & DEFENSE SLIDES */}
+            {activeTab === 'viva_prep' && (
+              <DefenseVivaPrep
+                activeProject={activeProject}
+                showToast={showToast}
+              />
             )}
 
             {/* TAB 6: LATEX & EXPORT HUB */}
