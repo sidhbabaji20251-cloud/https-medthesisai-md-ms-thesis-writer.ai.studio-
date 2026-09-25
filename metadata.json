@@ -1,0 +1,6 @@
+{
+  "name": "MedThesisAI - MD/MS Thesis Writer",
+  "description": "AI-powered dissertation and thesis agent for MD/MS students of medical colleges in India, integrated with PubMed, plagiarism checks, style formatting, and cloud synchronization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
