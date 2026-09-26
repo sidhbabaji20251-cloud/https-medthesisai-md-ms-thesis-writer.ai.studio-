@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" />
+      <stop offset="50%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="none" stroke="url(#goldGrad)" stroke-width="10" opacity="0.85" />
+  <!-- Academic Mortarboard Cap -->
+  <polygon points="256,76 416,146 256,216 96,146" fill="url(#goldGrad)" />
+  <path d="M160,180 L160,236 C160,266 352,266 352,236 L352,180" fill="none" stroke="#fde68a" stroke-width="14" stroke-linecap="round" />
+  <line x1="392" y1="156" x2="392" y2="244" stroke="#fbbf24" stroke-width="10" stroke-linecap="round" />
+  <circle cx="392" cy="252" r="12" fill="#f59e0b" />
+  <!-- Medical Cross & Open Thesis Book -->
+  <rect x="234" y="248" width="44" height="136" rx="10" fill="#ffffff" />
+  <rect x="188" y="294" width="136" height="44" rx="10" fill="#ffffff" />
+  <rect x="242" y="256" width="28" height="120" rx="6" fill="#e11d48" />
+  <rect x="196" y="302" width="120" height="28" rx="6" fill="#e11d48" />
+  <!-- Bottom Banner Text -->
+  <rect x="104" y="404" width="304" height="48" rx="14" fill="#fef3c7" />
+  <text x="256" y="436" font-family="sans-serif" font-size="28" font-weight="900" fill="#064e3b" text-anchor="middle" letter-spacing="2">MD/MS THESIS</text>
+</svg>

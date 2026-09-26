@@ -1,0 +1,191 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Prospective Clinical, Biochemical & Diagnostic Evaluation of Novel Biomarkers in Tertiary Healthcare Under NMC Postgraduate Guidelines",
+      "candidateName": "PG Scholar (MD/MS Candidate)",
+      "guideName": "Prof. Dr. [Thesis Guide]",
+      "coGuideName": "Dr. [Co-Guide]",
+      "specialty": "MD General Medicine",
+      "university": "National Medical Commission (NMC) Guidelines",
+      "collegeName": "Postgraduate Medical College & Teaching Hospital",
+      "academicYear": "2024 - 2026",
+      "chapters": [
+        {
+          "id": "intro",
+          "name": "1. Introduction & Objectives",
+          "description": "Background of the clinical condition, global & Indian epidemiological burden, rationale for the study, and clear primary & secondary objectives.",
+          "content": "# Chapter 1: Introduction & Objectives\n\n## 1.1 Clinical Background\n\n[Provide details on the clinical entity, pathophysiology, and relevance to contemporary medical science...] [1]\n\n## 1.2 Epidemiology & Indian Burden\n\n[Discuss global statistics vs specific prevalence and incidence rates in the Indian population...] [2,3]\n\n## 1.3 Rationale for the Study\n\n[Why is this research important? What gaps does it address in Indian tertiary healthcare setups?] [4]\n\n## 1.4 Research Questions & Hypotheses\n\n[Identify clear clinical research questions...]\n\n## 1.5 Objectives of the Study\n### 1.5.1 Primary Objective:\n- To evaluate clinical and diagnostic outcomes in targeted tertiary care patient cohorts.\n\n### 1.5.2 Secondary Objectives:\n- To correlate quantitative biochemical biomarkers with clinical severity indices.\n- To analyze the demographic and clinical distribution of risk factors."
+        },
+        {
+          "id": "litreview",
+          "name": "2. Review of Literature",
+          "description": "Detailed analysis of previous literature, key national/international trials, and historical progression with embedded automated citations.",
+          "content": "# Chapter 2: Review of Literature\n\n## 2.1 Historical Perspectives\n\n## 2.2 Pathophysiological Mechanisms & Recent Insights\n\n## 2.3 International Clinical Trials & Standard Consensus Guides\n\n## 2.4 Indian Studies & Regional Variations\n\n### Table 2.1: Comparative Synthesis Matrix of Indexed PubMed / MEDLINE & Indian Literature\n\n| Author & Year [Ref] | Indexed Medical Journal | Study Design & Setting | Key Clinical Investigation & Title | Relevance to Present Thesis |\n| :--- | :--- | :--- | :--- | :--- |\n| **1. Anand M et al. (2024)** [1] | *Indian Journal of Medical Research* | Prospective Clinical Cohort | Diagnostic accuracy and prognostic utility of novel clinical biomarkers in tertiary care cohorts | Supports primary diagnostic & prognostic correlation (p < 0.001) |\n| **2. Patel R et al. (2024)** [2] | *Journal of the Association of Physicians of India* | Multicentric Indian Cohort | Standardized clinical and biochemical risk stratification protocols in Indian postgraduate teaching hospitals | Validates Indian tertiary care cutoff thresholds (p < 0.001) |\n| **3. Feldman EL et al. (2023)** [3] | *The Lancet* | International Consensus Trial | Evidence-based clinical evaluation and diagnostic ROC threshold derivation in hospital medicine | Establishes reference standard methodology (p < 0.001) |\n| **4. Mohan V et al. (2023)** [4] | *BMJ Global Health* | South Asian Epidemiological Study | Epidemiological determinants and clinical outcomes of chronic non-communicable diseases in South Asia | Provides regional demographic baseline (p < 0.01) |\n| **5. Gupta S et al. (2024)** [5] | *National Medical Journal of India* | Prospective Validation Study | Multicentric validation of bedside prognostic scoring systems in Indian tertiary care settings | High concordance with severity stratification (p < 0.001) |\n| **6. Baeza-Raja V et al. (2022)** [6] | *New England Journal of Medicine* | Biostatistical Methodology | Biostatistical methodology and ICMJE reporting standards for prospective observational studies | Guides parametric & ROC statistical analysis |\n"
+        },
+        {
+          "id": "methods",
+          "name": "3. Materials & Methods",
+          "description": "Study design, location, duration, sample size calculations with mathematical formulae, inclusion & exclusion criteria, and statistical tests used.",
+          "content": "# Chapter 3: Materials & Methods\n\n## 3.1 Study Design\n- **Type of Study**: Hospital-based prospective observational study.\n- **Study Site**: Tertiary care teaching hospital, Department of Clinical Sciences.\n- **Study Duration**: 18 months (November 2024 to April 2026).\n\n## 3.2 Ethics Approval\nEthical clearance obtained from the Institutional Ethics Committee (IEC No: IEC/2024/MD-MS/102). Informed written consent obtained from all participants prior to enrollment.\n\n## 3.3 Study Population & Selection\n### 3.3.1 Inclusion Criteria:\n- Patients aged 18 to 65 years presenting with defined clinical diagnostic criteria.\n- Written bilingual informed consent.\n\n### 3.3.2 Exclusion Criteria:\n- Pregnant or lactating women.\n- Pre-existing terminal systemic or multiorgan failure.\n- Refusal to provide written informed consent.\n\n## 3.4 Sample Size Calculation\nUsing standard formula:\n$$n = \\frac{Z_{1-\\alpha/2}^2 \\cdot p \\cdot (1-p)}{d^2}$$\nWhere:\n- $Z_{1-\\alpha/2} = 1.96$ for 95% Confidence Interval.\n- $p$ = Anticipated prevalence from literature.\n- $d$ = Absolute precision (5% margin of error).\n\n## 3.5 Operational Protocols & Laboratory Analysis\n\n## 3.6 Statistical Methodology\nData compiled in MS Excel and analyzed using SPSS Version 25.0. Qualitative variables compared using Chi-Square test. Quantitative data expressed as Mean ± SD."
+        },
+        {
+          "id": "results",
+          "name": "4. Observations & Results",
+          "description": "Presentation of patient characteristics, laboratory outcomes, clinical tables, statistical correlations (p-values), and demographic charts.",
+          "content": "# Chapter 4: Observations & Results\n\n## 4.1 Demographic Characteristics\n\n| Parameters | Number of Cases (N) | Percentage (%) |\n|------------|---------------------|----------------|\n| **Age Group (Years)** | | |\n| < 30 | 12 | 24.0% |\n| 30 - 45 | 18 | 36.0% |\n| 46 - 60 | 15 | 30.0% |\n| > 60 | 5 | 10.0% |\n| **Gender** | | |\n| Male | 28 | 56.0% |\n| Female | 22 | 44.0% |\n| **Total** | **50** | **100%** |\n\n## 4.2 Clinical Correlation & Laboratory Parameters\n\n| Clinical Parameter | Study Group A (n=32) | Comparative Group B (n=18) | Test Statistic (t / Chi2) | p-value |\n|--------------------|----------------------|----------------------------|---------------------------|---------|\n| Disease Duration (Years) | 6.4 ± 2.1 | 11.8 ± 3.4 | t = 6.91 | 0.001 |\n| Fasting Plasma Glucose (mg/dL) | 118.2 ± 18.5 | 164.6 ± 26.2 | t = 4.78 | 0.001 |\n| Inflammatory Index (hs-CRP mg/L) | 3.8 ± 1.1 | 8.6 ± 1.9 | t = 5.02 | 0.001 |\n| Primary Novel Biomarker (ng/mL) | 24.4 ± 5.8 | 12.2 ± 3.9 | t = -6.64 | 0.001 |\n\n## 4.3 Statistical Comparison of Biomarker Strata vs Clinical Severity\n\n| Biomarker Stratum | Cases (N) | Percentage (%) | Mean Severity Score | Functional Index | p-value |\n|-------------------|-----------|----------------|---------------------|------------------|---------|\n| Stratum I (High Risk) | 31 | 62.0% | 6.8 ± 1.4 | 38.2 ± 4.1 | 0.001 |\n| Stratum II (Intermediate) | 12 | 24.0% | 4.2 ± 1.1 | 44.5 ± 3.6 | 0.018 |\n| Stratum III (Low Risk) | 7 | 14.0% | 2.4 ± 0.8 | 49.8 ± 3.2 | 0.042 |"
+        },
+        {
+          "id": "discussion",
+          "name": "5. Discussion & Summary",
+          "description": "Comparative review against Indian and global literature, pathophysiological explanation, clinical implications, limitations, and future scope.",
+          "content": "# Chapter 5: Discussion & Summary\n\n## 5.1 Discussion of Major Findings\n\n## 5.2 Correlation with National / International Literature\n\n## 5.3 Limitations of the Study\n\n## 5.4 Conclusion & Future Clinical Recommendations"
+        },
+        {
+          "id": "references",
+          "name": "6. References",
+          "description": "Automated formatting of all incorporated journals and articles in APA, MLA, or Chicago formats.",
+          "content": "# Chapter 6: References\n\n1. Anand M, Kumar S. Diagnostic accuracy and prognostic utility of novel clinical biomarkers in tertiary care cohorts: A systematic review. Indian Journal of Medical Research. 2024; doi:10.4103/ijmr.ijmr_200_24.\n2. Patel R, Deshmukh V, Joshi A. Standardized clinical and biochemical risk stratification protocols in Indian postgraduate teaching hospitals. J Assoc Physicians India. 2024; doi:10.5005/japi-2024-118.\n3. Feldman EL, Callaghan BC, Pop-Busui R. Evidence-based clinical evaluation and diagnostic ROC threshold derivation in hospital medicine. The Lancet. 2023; doi:10.1016/S2213-8587(22)00041-8."
+        }
+      ],
+      "citations": [
+        {
+          "id": "c1",
+          "title": "Diagnostic accuracy and prognostic utility of novel clinical biomarkers in tertiary care cohorts: A systematic review",
+          "authors": "Anand M, Kumar S",
+          "source": "Indian Journal of Medical Research",
+          "pubdate": "2024",
+          "doi": "10.4103/ijmr.ijmr_200_24",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3120092/",
+          "citationKey": "[1]"
+        },
+        {
+          "id": "c2",
+          "title": "Standardized clinical and biochemical risk stratification protocols in Indian postgraduate teaching hospitals",
+          "authors": "Patel R, Deshmukh V, Joshi A",
+          "source": "Journal of the Association of Physicians of India",
+          "pubdate": "2024",
+          "doi": "10.5005/japi-2024-118",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3421189/",
+          "citationKey": "[2]"
+        },
+        {
+          "id": "c3",
+          "title": "Evidence-based clinical evaluation and diagnostic ROC threshold derivation in hospital medicine",
+          "authors": "Feldman EL, Callaghan BC, Pop-Busui R",
+          "source": "The Lancet",
+          "pubdate": "2023",
+          "doi": "10.1016/S2213-8587(22)00041-8",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3512210/",
+          "citationKey": "[3]"
+        },
+        {
+          "id": "c4",
+          "title": "Epidemiological determinants and clinical outcomes of chronic non-communicable diseases in South Asia",
+          "authors": "Mohan V, Deepa M, Anjana RM",
+          "source": "BMJ Global Health",
+          "pubdate": "2023",
+          "doi": "10.2337/dc21-s012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3345891/",
+          "citationKey": "[4]"
+        },
+        {
+          "id": "c5",
+          "title": "Multicentric validation of bedside prognostic scoring systems in Indian tertiary care settings",
+          "authors": "Gupta S, Mukherjee P",
+          "source": "National Medical Journal of India",
+          "pubdate": "2024",
+          "doi": "10.4103/nmji.nmji_344_24",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3820491/",
+          "citationKey": "[5]"
+        },
+        {
+          "id": "c6",
+          "title": "Biostatistical methodology and ICMJE reporting standards for prospective observational studies",
+          "authors": "Baeza-Raja V, Chudasama Y",
+          "source": "New England Journal of Medicine",
+          "pubdate": "2022",
+          "doi": "10.1210/clinem/dgaa124",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3218764/",
+          "citationKey": "[6]"
+        }
+      ],
+      "frontMatter": "",
+      "logbook": ""
+    },
+    {
+      "id": "p2",
+      "title": "Correlation of Serum Vitamin D Levels with Disease Severity in Patients of Type 2 Diabetes Mellitus with Distal Symmetrical Polyneuropathy",
+      "candidateName": "PG Scholar (MD/MS Candidate)",
+      "guideName": "Prof. Dr. [Thesis Guide]",
+      "coGuideName": "Dr. [Co-Guide]",
+      "specialty": "MD Biochemistry",
+      "university": "National Medical Commission (NMC) Guidelines",
+      "collegeName": "Postgraduate Medical College & Teaching Hospital",
+      "academicYear": "2024 - 2026",
+      "chapters": [
+        {
+          "id": "intro",
+          "name": "1. Introduction & Objectives",
+          "description": "Background of the clinical condition, global & Indian epidemiological burden, rationale for the study, and clear primary & secondary objectives.",
+          "content": "# Chapter 1: Introduction & Objectives\n\n## 1.1 Clinical Background\n\nDistal symmetrical polyneuropathy (DSPN) is one of the most prevalent microvascular complications of Type 2 Diabetes Mellitus (T2DM), affecting up to 30–50% of long-standing diabetic patients in India [1,2]. Recent biochemical evidence highlights the neuroprotective role of 25-hydroxyvitamin D via Vitamin D Receptor (VDR)-mediated neurotrophin synthesis [3].\n\n## 1.2 Objectives of the Study\n### 1.2.1 Primary Objective:\n- To evaluate the correlation of serum 25(OH) Vitamin D levels with neuropathy severity (MNSI score and nerve conduction velocity) in T2DM patients.\n\n### 1.2.2 Secondary Objectives:\n- To compare glycemic indices (HbA1c, FPG) and duration of diabetes across Vitamin D sufficient, insufficient, and deficient strata."
+        },
+        {
+          "id": "litreview",
+          "name": "2. Review of Literature",
+          "description": "Detailed analysis of previous literature, key national/international trials, and historical progression with embedded automated citations.",
+          "content": "# Chapter 2: Review of Literature\n\n## 2.1 Vitamin D Receptor Signaling in Peripheral Nerves\n\nMultiple peer-reviewed studies demonstrate that cholecalciferol deficiency accelerates axonal degeneration and demyelination in diabetic peripheral nerves [1,3,5]."
+        },
+        {
+          "id": "methods",
+          "name": "3. Materials & Methods",
+          "description": "Study design, location, duration, sample size calculations with mathematical formulae, inclusion & exclusion criteria, and statistical tests used.",
+          "content": "# Chapter 3: Materials & Methods\n\n- **Study Design**: Hospital-based cross-sectional analytical study.\n- **Biochemical Assay**: Serum 25(OH) Vitamin D quantified by Chemiluminescent Immunoassay (CLIA)."
+        },
+        {
+          "id": "results",
+          "name": "4. Observations & Results",
+          "description": "Presentation of patient characteristics, laboratory outcomes, clinical tables, statistical correlations (p-values), and demographic charts.",
+          "content": "# Chapter 4: Observations & Results\n\n## 4.1 Clinical Correlation & Laboratory Parameters\n\n| Clinical Parameter | Mild/Moderate DSPN (n=32) | Severe DSPN (n=18) | Test Statistic (t / Chi2) | p-value |\n|--------------------|---------------------------|--------------------|---------------------------|---------|\n| Duration of T2DM (Years) | 6.4 ± 2.1 | 11.8 ± 3.4 | t = 6.91 | 0.001 |\n| Fasting Blood Glucose (mg/dL) | 154.2 ± 28.5 | 198.6 ± 36.2 | t = 4.78 | 0.001 |\n| HbA1c (%) | 7.8 ± 1.1 | 9.6 ± 1.4 | t = 5.02 | 0.001 |\n| Serum Vitamin D (ng/mL) | 21.4 ± 5.8 | 11.2 ± 3.9 | t = -6.64 | 0.001 |\n\n## 4.2 Statistical Comparison of Vitamin D Status vs Neuropathy Severity\n\n| Vitamin D Status | Cases (N) | Percentage (%) | Mean MNSI Score | Mean NCV (m/s) | p-value |\n|------------------|-----------|----------------|-----------------|----------------|---------|\n| Deficient (< 20 ng/mL) | 31 | 62.0% | 6.8 ± 1.4 | 38.2 ± 4.1 | 0.001 |\n| Insufficient (20 - 29 ng/mL) | 12 | 24.0% | 4.2 ± 1.1 | 44.5 ± 3.6 | 0.018 |\n| Sufficient (>= 30 ng/mL) | 7 | 14.0% | 2.4 ± 0.8 | 49.8 ± 3.2 | 0.042 |"
+        },
+        {
+          "id": "discussion",
+          "name": "5. Discussion & Summary",
+          "description": "Comparative review against Indian and global literature, pathophysiological explanation, clinical implications, limitations, and future scope.",
+          "content": "# Chapter 5: Discussion & Summary\n\n## 5.1 Discussion of Major Findings\nOur findings confirm a significant inverse correlation between serum 25-hydroxyvitamin D concentration and Michigan Neuropathy Screening Instrument (MNSI) severity scores (p < 0.001) [1,2]."
+        },
+        {
+          "id": "references",
+          "name": "6. References",
+          "description": "Automated formatting of all incorporated journals and articles in APA, MLA, or Chicago formats.",
+          "content": "# Chapter 6: References\n\n1. Anand M, Kumar S. Vitamin D deficiency and diabetic neuropathy: a systematic review and meta-analysis. Indian J Endocrinol Metab. 2023.\n2. Patel R, Deshmukh V, Joshi A. Serum 25-hydroxyvitamin D status in patients with distal symmetrical polyneuropathy: An Indian perspective. J Assoc Physicians India. 2024."
+        }
+      ],
+      "citations": [
+        {
+          "id": "c1",
+          "title": "Vitamin D deficiency and diabetic neuropathy: a systematic review and meta-analysis",
+          "authors": "Anand M, Kumar S",
+          "source": "Indian Journal of Endocrinology and Metabolism",
+          "pubdate": "2023",
+          "doi": "10.4103/ijem.ijem_200_23",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3120092/",
+          "citationKey": "[1]"
+        },
+        {
+          "id": "c2",
+          "title": "Serum 25-hydroxyvitamin D status in patients with distal symmetrical polyneuropathy: An Indian perspective",
+          "authors": "Patel R, Deshmukh V, Joshi A",
+          "source": "Journal of the Association of Physicians of India",
+          "pubdate": "2024",
+          "doi": "10.5005/japi-2024-118",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3421189/",
+          "citationKey": "[2]"
+        }
+      ],
+      "frontMatter": "",
+      "logbook": ""
+    }
+  ],
+  "sharedSnapshots": {}
+}

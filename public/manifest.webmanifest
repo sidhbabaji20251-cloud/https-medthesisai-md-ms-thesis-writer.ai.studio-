@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "YADAV MD/MS Thesis Studio : AI Assisted Open-Access MD/MS Thesis & Clinical Research Co-Pilot",
+  "short_name": "ThesisStudio",
+  "description": "AI Assisted Open-Access MD/MS Thesis & Clinical Research Co-Pilot for Indian Medical Colleges, integrated with NMC Protocol Builder, Biostatistical Master Chart Engine, PubMed, and Plagiarism Guard.",
+  "theme_color": "#065f46",
+  "background_color": "#f0fdf4",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
